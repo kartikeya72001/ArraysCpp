@@ -1,4 +1,5 @@
 #include<iostream>
+#include<ctime>
 using namespace std;
 void Display(int n, int arr[])
 {
@@ -34,5 +35,7 @@ int main()
         cin>>arr[i];
     }
     SelectionSort(n,arr);
+    cout<<endl;
+    cout<<clock()<<"ms";
     return 0;
 }
