@@ -5,7 +5,7 @@ int main()
     int n;
     cin>>n;
     int temp=0;
-    int arr[1000][1000];
+    int arr[100][100];
     for(int i=0;i<n;i++)
     {
         for(int j=0;j<n;j++)
@@ -15,11 +15,18 @@ int main()
     }
     for(int i=0;i<n;i++)
     {
-        for(int j=0;j<n;j++)
-        {
-            temp=arr[i][j];
-            arr[i][j]=arr[j][i];
-            arr[j][i]=temp;
+        int k=0, j=n-1;
+        while(k<j){
+            swap(arr[i][j],arr[i][k]);
+            k++;
+            j--;
+        }
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if(i<j){
+                swap(arr[i][j],arr[j][i]);
+            }
         }
     }
     for(int i=0;i<n;i++)
