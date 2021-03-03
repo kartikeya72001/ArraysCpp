@@ -28,10 +28,8 @@ int N,C;
 int check(int num,int stalls[])
 {
 	int cows=1,pos=stalls[0];
-	for (int i=1; i<N; i++)
-	{
-		if (stalls[i]-pos>=num)
-		{
+	for (int i=1; i<N; i++){
+		if (stalls[i]-pos>=num){
 			pos=stalls[i];
 			cows++;
 			if (cows==C)
@@ -61,17 +59,16 @@ int binarySearch(int stalls[])
 
 int main()
 {
-			cin>>N>>C;
+	cin>>N>>C;
+	int stalls[N];
 
-		int stalls[N];
+	for (int i=0; i<N; i++)
+		cin>>stalls[i];
 
-		for (int i=0; i<N; i++)
-			cin>>stalls[i];
+	sort(stalls,stalls+N);
 
-		sort(stalls,stalls+N);
+	int k=binarySearch(stalls);
 
-		int k=binarySearch(stalls);
-
-		cout<<k;
-		return 0;
+	cout<<k;
+	return 0;
 }
