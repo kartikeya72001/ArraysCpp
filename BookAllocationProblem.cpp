@@ -32,6 +32,8 @@ bool isPossible(int *arr,int n,int m, int mid)
 
 	for(int i=0;i<n;i++)
 	{
+		if(arr[i] > mid)
+			return false;
 		if(pages+arr[i]>mid)
 		{
 			student++;
